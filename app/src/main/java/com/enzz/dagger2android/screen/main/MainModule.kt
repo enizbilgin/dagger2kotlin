@@ -1,6 +1,6 @@
 package com.enzz.dagger2android.screen.main
 
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.ViewModelProviders
 import com.enzz.dagger2android.di.ActivityModule
 import com.enzz.dagger2android.di.ActivityScope
 import com.enzz.dagger2android.screen.main.activities.MainActivity
