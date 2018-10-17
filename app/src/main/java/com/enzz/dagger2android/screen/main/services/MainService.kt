@@ -1,8 +1,8 @@
 package com.enzz.dagger2android.screen.main.services
 
+import com.enzz.dagger2android.screen.main.models.Photo
 import io.reactivex.Observable
 import retrofit2.http.GET
-import retrofit2.http.Query
 
 
 /**
@@ -11,7 +11,6 @@ import retrofit2.http.Query
 
 interface MainService {
 
-    @GET("trends/user.json")
-    fun getUsers(@Query("id") placeId: String): Observable<List<String>>
-
+    @GET("photos")
+    fun getPhotos(): Observable<List<Photo>>
 }
