@@ -15,6 +15,6 @@ class SampleApplication : DaggerApplication() {
     lateinit var retrofit: Retrofit
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerSampleApplicationComponent.builder().application(this).create(this)
+        return DaggerSampleApplicationComponent.builder().create(this)
     }
 }

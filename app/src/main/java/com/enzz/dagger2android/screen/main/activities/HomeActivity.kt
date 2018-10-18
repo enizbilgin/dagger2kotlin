@@ -5,6 +5,7 @@ import com.enzz.dagger2android.R
 import com.enzz.dagger2android.screen.main.adapters.HomePagerAdapter
 import com.enzz.dagger2android.screen.main.viewmodels.MainViewModel
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.squareup.picasso.Picasso
 import dagger.android.support.DaggerAppCompatActivity
 import io.reactivex.disposables.CompositeDisposable
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,6 +19,9 @@ class HomeActivity : AbstractHomeActivity() {
 
     @Inject
     lateinit var pagerAdapter: HomePagerAdapter
+
+    @Inject
+    lateinit var picasso: Picasso
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

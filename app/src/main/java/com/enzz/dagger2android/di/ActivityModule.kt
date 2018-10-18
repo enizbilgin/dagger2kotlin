@@ -18,10 +18,4 @@ abstract class ActivityModule<T : Activity> {
     fun context(activity: T): Context {
         return activity
     }
-
-    @Provides
-    @ActivityScope
-    fun activity(activity: T): Activity {
-        return activity
-    }
 }
