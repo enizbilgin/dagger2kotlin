@@ -6,7 +6,7 @@ import com.squareup.picasso.Picasso
 import dagger.Module
 import dagger.Provides
 import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.converter.moshi.MoshiConverterFactory
 
 
 /**
@@ -22,7 +22,7 @@ class NetworkModule {
         return Retrofit.Builder()
                 .baseUrl("https://jsonplaceholder.typicode.com/")
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(MoshiConverterFactory.create())
                 .build()
     }
 

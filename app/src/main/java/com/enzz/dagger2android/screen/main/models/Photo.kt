@@ -1,15 +1,15 @@
 package com.enzz.dagger2android.screen.main.models
 
-import com.google.gson.annotations.SerializedName
+import com.squareup.moshi.Json
 
 /**
  * Created by eniz.bilgin on 17.10.2018.
  */
 
 data class Photo(
-        @SerializedName("albumId") val albumId: Int?,
-        @SerializedName("id") val id: Int?,
-        @SerializedName("title") val title: String?,
-        @SerializedName("url") val url: String?,
-        @SerializedName("thumbnailUrl") val thumbnailUrl: String?
+        @field:Json(name = "albumId") val albumId: Int?,
+        @field:Json(name = "id") val id: Int?,
+        @field:Json(name = "title") val title: String?,
+        @field:Json(name = "url") val url: String?,
+        @field:Json(name = "thumbnailUrl") val thumbnailUrl: String?
 )
