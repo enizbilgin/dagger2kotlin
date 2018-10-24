@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:foreground="?attr/selectableItemBackground">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/imageItem"
@@ -25,6 +26,6 @@
         app:layout_constraintEnd_toEndOf="@+id/imageItem"
         app:layout_constraintStart_toStartOf="@+id/imageItem"
         app:layout_constraintTop_toBottomOf="@+id/imageItem"
-        tools:text="test" />
+        tools:text="Ilker was here!" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -57,6 +57,11 @@ abstract class AbstractRecyclerViewAdapter<T, H : AbstractViewHolder<T>>() : Rec
         notifyDataSetChanged()
     }
 
+
+    fun setOnOnItemClickListener(listener: OnItemClickListener<T>?) {
+        this.itemClickListener = listener
+    }
+
     internal interface Binder<T> {
         fun bind(data: T)
     }
