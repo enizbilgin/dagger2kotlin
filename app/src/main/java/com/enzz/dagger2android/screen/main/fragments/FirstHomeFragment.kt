@@ -35,11 +35,9 @@ class FirstHomeFragment : AbstractHomeFragment() {
 
         homeList.adapter = adapter
 
-        adapter.setOnOnItemClickListener(object : AbstractRecyclerViewAdapter.OnItemClickListener<Photo> {
-            override fun onItemClick(data: Photo) {
-                Toast.makeText(requireContext(), data.title, Toast.LENGTH_SHORT).show()
-            }
-        });
+        adapter.setOnItemClickListener {
+
+        }
 
         compositeDisposable.add(
                 viewModel.photosSubject
