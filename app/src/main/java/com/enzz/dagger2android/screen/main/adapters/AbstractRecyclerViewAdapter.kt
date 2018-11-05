@@ -14,7 +14,7 @@ abstract class AbstractRecyclerViewAdapter<T, H : AbstractViewHolder<T>>() : Rec
 
     protected val itemList: ArrayList<T> = ArrayList()
 
-    private lateinit var clickListener: (T) -> Unit
+    private var clickListener: clickHandler<T>? = null
 
     constructor(listItems: List<T>) : this() {
         this.itemList.addAll(listItems)
@@ -34,7 +34,11 @@ abstract class AbstractRecyclerViewAdapter<T, H : AbstractViewHolder<T>>() : Rec
         // bind data holder
         holder.bind(data)
         // listen to click handler
-        holder.itemView.setOnClickListener { clickListener(data) }
+        holder.itemView.setOnClickListener { it ->
+            clickListener?.let {
+                it(data)
+            }
+        }
     }
 
     override fun getItemCount(): Int {
@@ -56,7 +60,7 @@ abstract class AbstractRecyclerViewAdapter<T, H : AbstractViewHolder<T>>() : Rec
     }
 
 
-    fun setOnItemClickListener(clickListener: (T) -> Unit) {
+    fun setOnItemClickListener(clickListener: clickHandler<T>) {
         this.clickListener = clickListener
     }
 
@@ -64,3 +68,5 @@ abstract class AbstractRecyclerViewAdapter<T, H : AbstractViewHolder<T>>() : Rec
         fun bind(data: T)
     }
 }
+
+typealias clickHandler<T> = (T) -> Unit
